@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  h2= state
+  form#form(method='post' action='/handler')
+    p ID :
+    input(type='text' name='idinput')
+    br
+    input(type='submit' value="Chercher")
+  #results
+    div
+      | ID :
+      label=id
+    div
+      | Temps :
+      label=temps
+    div
+      | Température :
+      label=temperature
+    div
+      | Humidité :
+      label=humidite
+
+

@@ -1,0 +1,36 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#results{
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 6px;
+  border: 5px solid black;
+}
+
+#form{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+
+}
+
+body{
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+    Introduced in IE 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  -ms-user-select: none;
+  user-select: none;
+}
