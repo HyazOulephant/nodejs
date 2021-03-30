@@ -39,9 +39,9 @@ router
                             title: 'Résultats des noeuds',
                             state: "Noeud trouvé en bdd",
                             id: mote,
-                            temps:(result[0].time).substr(1, 19),
-                            temperature:parseInt(arrayData[1], 16) + " degrés",
-                            humidite:parseInt(arrayData[2], 16) + "%"
+                            temps: result[0].time,
+                            temperature: parseInt(arrayData[1], 16) + " degrés",
+                            humidite: parseInt(arrayData[2], 16) + "%"
 
                         });
                     }
