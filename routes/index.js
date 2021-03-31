@@ -34,14 +34,15 @@ router
                     else {
                         let stringData = result[0].data;
                         let arrayData = stringData.split('x');
-                        //console.log(result[0]);
+                        let strTemps = JSON.stringify(result[0].time).substring(1,20);
+
                         res.render('index', {
                             title: 'Résultats des noeuds',
                             state: "Noeud trouvé en bdd",
-                            id: mote,
-                            temps: result[0].time,
-                            temperature: parseInt(arrayData[1], 16) + " degrés",
-                            humidite: parseInt(arrayData[2], 16) + "%"
+                            id: " "+mote,
+                            temps: " "+strTemps.replace("T", "    "),
+                            temperature: " "+parseInt(arrayData[1], 16) + " degrés",
+                            humidite: " "+parseInt(arrayData[2], 16) + "%"
 
                         });
                     }
