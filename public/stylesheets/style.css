@@ -68,3 +68,9 @@ input[type=submit]{
 input[type=submit]:hover{
   background-color: #19647E;
 }
+
+#logs{
+  padding-top: 20px;
+  padding-left: 20px;
+  width: 240px;
+}
