@@ -5,6 +5,7 @@ const mysql = require('mysql');
 
 var urlencodedParser = bodyParser.urlencoded({ extended: true });
 
+/* Establish conn with DB*/
 let con = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -13,11 +14,12 @@ let con = mysql.createConnection({
 });
 con.connect();
 
-/* GET home page. */
+/* GET home page */
 router
     .get('/', function(req, res, next) {
   res.render('index', { title: 'Résultats des noeuds' });
 })
+    /* POST user input */
     .post('/handler', urlencodedParser, function(req, res) {
         console.log(req.body.idinput);
         let mote = req.body.idinput;
@@ -25,12 +27,15 @@ router
             /* Query to db */
                 //Select last logged entry (test this mote: 5177826204839378975 )
                 con.query("select mote,time,data from mergedframes where mote="+mote+" order by time DESC LIMIT 11;", function (err, result, fields) {
+                    // if not found
                     if(result==undefined){
                         res.render('index', {
                             title: 'Résultats des noeuds',
                             state: "Noeud non trouvé!"
                         });
                     }
+
+                    // if found in DB
                     else {
                         res.status(201);
 
@@ -46,6 +51,7 @@ router
                         let logTemps;
                         let strLogs ="";
 
+                        // full log list
                         for (let i=1; i<11; i+=1){
                             console.log(i);
                             stringLogData = result[i].data;
@@ -54,6 +60,7 @@ router
                             strLogs+=logTemps + " " + parseInt(arrayLogData[1], 16) + "d " + parseInt(arrayLogData[2], 16) + "%\r\n";
                         }
 
+                        /* Send page*/
                         res.render('index', {
                             title: 'Résultats des noeuds',
                             state: "Noeud trouvé en bdd",
@@ -65,9 +72,15 @@ router
 
                         });
 
-
                     }
                 });
 });
-
+function refreshPage(i) {
+    setTimeout(() => {
+        console.log('Refresh n:', i);
+        refreshPage(++i);
+        // make if here + post
+    }, 5000)
+}
+refreshPage(0);
 module.exports = router;
