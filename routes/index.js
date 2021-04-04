@@ -24,6 +24,7 @@ router
         console.log(req.body.idinput);
         let mote = req.body.idinput;
 
+
             /* Query to db */
                 //Select last logged entry (test this mote: 5177826204839378975 )
                 con.query("select mote,time,data from mergedframes where mote="+mote+" order by time DESC LIMIT 11;", function (err, result, fields) {
