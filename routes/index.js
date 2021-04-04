@@ -75,12 +75,4 @@ router
                     }
                 });
 });
-function refreshPage(i) {
-    setTimeout(() => {
-        console.log('Refresh n:', i);
-        refreshPage(++i);
-        // make if here + post
-    }, 5000)
-}
-refreshPage(0);
 module.exports = router;
