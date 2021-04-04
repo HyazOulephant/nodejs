@@ -53,7 +53,7 @@ router
                         let strLogs ="";
 
                         // full log list
-                        for (let i=1; i<11; i+=1){
+                        for (let i=1; i<result.length; i+=1){
                             console.log(i);
                             stringLogData = result[i].data;
                             arrayLogData = stringLogData.split('x');
