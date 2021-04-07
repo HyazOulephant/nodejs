@@ -11,3 +11,9 @@ A
 views/index.jade,3/c/3cf38f3d69f6c1a5010d684b824a968b1ab81ae6
 L
 public/stylesheets/style.css,3/7/373d337c32dec564fe0da458c6478733eec21e5a
+A
+views/layout.jade,1/9/19f90a8d49041372dd53a842a8b545ec9e574c13
+7
+bin/www,f/9/f9f3ad31c1666c9d010b84cbbe24e70370a40411
+@
+views/error.jade,d/3/d39a771627be855c377b72ec30981ec175d4c082

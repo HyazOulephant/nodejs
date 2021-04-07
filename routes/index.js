@@ -1,3 +1,5 @@
+var h2d = require('../functions/largeHexConv');
+
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
@@ -22,11 +24,14 @@ router
     /* POST user input */
     .post('/handler', urlencodedParser, function(req, res) {
         console.log(req.body.idinput);
-        let mote = req.body.idinput;
+
+        // large hex to dec function call
+        let mote = h2d.h2d(req.body.idinput);
+        console.log(mote);
 
 
             /* Query to db */
-                //Select last logged entry (test this mote: 5177826204839378975 )
+                //Select last logged entry (test this mote: d'47DB55800029001F h'5177826204839378975 )
                 con.query("select mote,time,data from mergedframes where mote="+mote+" order by time DESC LIMIT 11;", function (err, result, fields) {
                     // if not found
                     if(result==undefined){
