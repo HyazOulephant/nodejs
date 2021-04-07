@@ -17,3 +17,5 @@ A
 bin/www,f/9/f9f3ad31c1666c9d010b84cbbe24e70370a40411
 @
 views/error.jade,d/3/d39a771627be855c377b72ec30981ec175d4c082
+I
+functions/largeHexConv.js,e/8/e8d3a58c51d07e6405ab9ff9da3dfc3c7557d762
