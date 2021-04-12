@@ -59,7 +59,7 @@ router
 
                     /* First element */
                     let stringData = result[0].data;
-                    let arrayData = stringData.split('x');
+                    let arrayData = stringData.split('78');
                     let strTemps = JSON.stringify(result[0].time).substring(1,20);
 
                     /* Last log elements */
@@ -72,7 +72,7 @@ router
                     for (let i=1; i<result.length; i+=1){
                         console.log(i);
                         stringLogData = result[i].data;
-                        arrayLogData = stringLogData.split('x');
+                        arrayLogData = stringLogData.split('78');
                         logTemps = JSON.stringify(result[i].time).substring(1,20).replace("T", " ")
                         strLogs+=logTemps + " " + parseInt(arrayLogData[1], 16) + "d " + parseInt(arrayLogData[2], 16) + "%\r\n";
                     }
